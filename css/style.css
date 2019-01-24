@@ -223,7 +223,17 @@ footer .footer-right{
     margin-right: 30px;
   }
 }
-  
+  /*タブレット想定*/
+  @media  screen and (max-width:960px) {
+  .img-box{
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  .img-box li{
+    margin-top: 30px;
+    margin-right: 0;
+  }
+}
 
 
 
