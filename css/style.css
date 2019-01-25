@@ -213,6 +213,63 @@ footer .footer-right{
 }
 
 
+/*レスポンシブ対応します*/
+/*小型pc想定*/
+@media  screen and (max-width:1200px) {
+  .img-box{
+    justify-content: space-around;
+  }
+  .img-box li{
+    margin-right: 30px;
+  }
+}
+  /*タブレット想定*/
+  @media  screen and (max-width:960px) {
+    /*curriculum*/
+  .img-box{
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  .img-box li{
+    margin-top: 30px;
+    margin-right: 0;
+  }
+
+/*curriculumここまで*/
+
+/*contact*/
+.contact{
+  height: 100%;
+  padding: 40px 20px;
+
+}
+.contact .form{
+  flex-flow: column nowrap;
+  margin: 30px 0;
+}
+.form-left{
+  margin-right: 0;
+  margin-bottom: 30px;
+
+}
+.form .name,
+.form .email{
+  width: 80%;
+}
+.form .inquiry{
+  width: 80%;
+}
+
+.contact button{
+  font-size: 20px;
+  padding: 5px 40px;
+  box-sizing: border-box;
+}
+
+
+
+
+}
 
 
 
