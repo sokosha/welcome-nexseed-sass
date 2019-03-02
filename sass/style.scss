@@ -1,0 +1,434 @@
+@import "../sass/foundation/_reset.css";
+
+#fixed{
+  position: fixed;
+  width: 100%;
+  margin-top: -70px;
+}
+#margin-for-fixed{
+  margin-top: 70px;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  background-color: #1dace0;
+  color: #fff;
+  font-size: 18px;
+  padding: 5px 0;
+}
+.icon{
+  display: flex;
+  align-items: center;
+  margin-left: 80px;
+
+  img{
+    height: 60px;
+  }
+  .name strong{
+    color: #eae51f;
+  }
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  margin-right: 80px;
+  
+  li:first-child{
+    margin-right: 20px;
+  }
+}
+.welcome{
+  background: {
+    image: url(../img/background1.jpg);
+    size: cover;
+    repeat: no-repeat;
+    attachment: fixed;
+  }
+  height: 500px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.title{
+  font-size: 64px;
+}
+.guideline{
+  margin-top: 50px;
+  font-size: 28px;
+  font-weight: bold;
+  li{
+    margin-top: 16px;
+    li:first-child{
+      margin-top: 0px;
+    }
+  }
+
+}
+
+.btn-gruop{
+  margin-top: 60px;
+}
+.btn{
+  height: 55px;
+  width: 170px;
+  margin-left: 120px;
+  color: white;
+  font:{
+    weight: bold;
+    size: 28px;
+  }
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+.register{
+  background-color: rgba(29,172,224,.5);
+  border: 3px solid rgba(29,172,224,.3);
+  margin-left: 0;
+  &:hover{
+    background-color: rgb(29,172,224);
+  }
+}
+
+.login{
+  background-color: rgba(236,227,35,.5);
+  border: 3px solid rgba(236,227,35,.3);
+
+  &:hover{
+    background-color: rgb(236,227,35);
+  }
+}
+
+.curriculum{
+  margin-top: 50px;
+}
+.sub-title{
+  font-size: 36px;
+  text-align: center;
+}
+.img-box{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  li{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-right: 60px;
+  }
+  li:last-child{
+    margin-right: 0px;
+  }
+    li img{
+      height: 300px;
+      width: 300px;
+    }
+    li span{
+      font-size: 24px;
+      margin-top: 20px;
+    }
+}
+
+.contact{
+  height: 350px;
+  margin-top: 50px;
+  background-color: #edf4f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  .form{
+    margin: 50px 0 40px 0;
+    display: flex;
+    justify-content: center;
+    .name{
+      margin-bottom: 20px;
+    }
+
+  }
+}
+
+@mixin hoge($v,$i,$b,$g){
+
+  height: $v;
+  width: $i;
+  box-sizing: $b;
+  font-size: $g;
+}
+
+.form .name,
+.form .email{
+  @include hoge(50px,400px,border-box,16px);
+}
+
+.form-left{
+  margin-right: 50px;
+}
+.form .inquiry{
+  height: 120px;
+  width: 400px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.contact button{
+  background-color: #1dace0;
+  color: #fff;
+  border-radius: 10px;
+  border: 3px solid #1dace0;
+  font-size: 24px;
+  box-sizing: border-box;
+  padding: 15px 30px;
+  transition-duration: 500ms;
+}
+
+.contact button:hover {
+  background-color: #fff;
+  color: #1dace0;
+  transition-duration: 500ms;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #233f51;
+  color: #fff;
+  font-size: 18px;
+  padding: 5px;
+
+  .footer-right{
+    margin-right: 80px;
+  }
+}
+
+$breakpoints:(
+  // xs: "only screen and (max-width:320px)",
+  // s: "only screen and (max-width:575px)",
+  m: "only screen and (max-width:480px)",
+  l: "only screen and (max-width:960px)",
+  xl: "only screen and (max-width:1200px)"
+
+  );
+
+//mixin用意(画面サイズ判定用)
+@mixin media($breakpoint){
+
+  @if map-has-key($breakpoints,$breakpoint){
+    @media #{map-get($breakpoints,$breakpoint)}{
+      @content;
+    }
+  }
+  @else{
+    @error "$breakpointsに#{$breakpoint}というキーはありません";
+  }
+}
+
+  @include media(xl){
+    img-box{
+      justify-content: space-around;
+      li{
+        margin-right: 30px;
+      }
+    }
+  }
+  @include media(l){
+    .img-box{
+      flex-wrap: wrap;
+      align-content: center;
+      li{
+        margin-top: 30px;
+        margin-right: 0;
+      }
+    }
+    .contact{
+      height: 100%;
+      padding: 40px 20px;
+      .form{
+        flex-flow: column nowrap;
+        margin: 30px 0;
+      }
+    }
+    .form-left{
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+    
+
+    // 親
+    .form{
+      .name,.email,.inquiry{
+        width:80%
+      }
+      // .email{
+      //   width:80%
+      // }
+      // .inquiry{
+      //   width:80%
+      // }
+    }
+    .contact button{
+      font-size: 20px;
+      padding: 5px 40px;
+      box-sizing: border-box;
+    }
+
+
+
+  }
+
+  @include media(m){
+    body{
+      min-width: 375px;
+    }
+    .icon{
+      margin-left: 20px;
+    }
+    .icon span,
+    .header-right{
+      display: none;
+    }
+
+    .title{
+      font-size: 30px;
+    }
+    .guideline{
+      margin-top: 30px;
+      font:{
+        size: 24px;
+        weight: normal;
+      }
+    }
+    .btn-group{
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      margin-top: 40px;
+    }
+    .btn{
+      height: 48px;
+      width: 140px;
+      margin: {
+        top: 20px;
+        left: 0;
+      }
+      font:{
+        weight: bold;
+        size: 24px;
+      }
+      border-radius: 10px;
+      first-child{
+        margin-top: 0;
+      }
+    }
+
+    .sub-title{
+      font-size: 24px;
+    }
+    .img-box{
+      flex-flow: column nowrap;
+      li{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        margin-right: 0;
+        first-child{
+          margin-top: 0;
+        }
+        span{
+          font-size:16px;
+          margin-top: 20px;
+        }
+      }
+    }
+
+    .form {
+      .name,.email{
+        height: 30px;
+      }
+      .inquiry{
+        height: 50px;
+      }
+    }
+
+    footer{
+      display: flex;
+      justify-content: center;
+      .icon{
+        display: none;
+      }
+      .footer-right{
+        margin-right: 0;
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,15 +1,15 @@
-@import url(../sass/foundation/_reset.css);
-#fixed {
+/*header固定用*/
+#fixed{
   position: fixed;
   width: 100%;
   margin-top: -70px;
 }
-
-#margin-for-fixed {
+#margin-for-fixed{
   margin-top: 70px;
 }
+/*header固定ここまで*/
 
-header {
+header{
   display: flex;
   justify-content: space-between;
   background-color: #1dace0;
@@ -17,67 +17,68 @@ header {
   font-size: 18px;
   padding: 5px 0;
 }
-
-.icon {
+.icon{
   display: flex;
   align-items: center;
   margin-left: 80px;
 }
 
-.icon img {
+.icon img{
   height: 60px;
-}
 
-.icon .name strong {
+}
+.icon .name strong{
   color: #eae51f;
 }
 
 .header-right {
   display: flex;
   align-items: center;
-  margin-right: 80px;
-}
+  margin-right:80px;
 
-.header-right li:first-child {
+}
+.header-right li:first-child{
   margin-right: 20px;
 }
+.welcome{
 
-.welcome {
   background-image: url(../img/background1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+
   background-attachment: fixed;
+  
   height: 500px;
   color: #fff;
+
   display: flex;
   justify-content: center;
   text-align: center;
   flex-direction: column;
+
 }
 
-.title {
+.title{
   font-size: 64px;
 }
 
-.guideline {
+.guideline{
   margin-top: 50px;
   font-size: 28px;
   font-weight: bold;
 }
 
-.guideline li {
+.guideline li{
   margin-top: 16px;
 }
 
-.guideline li li:first-child {
+.guideline li:first-child{
   margin-top: 0px;
 }
-
-.btn-gruop {
+.btn-group {
   margin-top: 60px;
 }
-
-.btn {
+.btn{
   height: 55px;
   width: 170px;
   margin-left: 120px;
@@ -86,65 +87,64 @@ header {
   font-size: 28px;
   border-radius: 10px;
   cursor: pointer;
-  margin-top: 30px;
+}
+.btn:first-child{
+  margin-left: 0px;
 }
 
-.register {
-  background-color: rgba(29, 172, 224, 0.5);
-  border: 3px solid rgba(29, 172, 224, 0.3);
-  margin-left: 0;
+.register{
+  background-color: rgba(29,172,224,.5);
+  border: 3px solid rgba(29,172,224,.3);
 }
 
-.register:hover {
-  background-color: #1dace0;
+.register:hover{
+  background-color: rgb(29,172,224)
 }
 
-.login {
-  background-color: rgba(236, 227, 35, 0.5);
-  border: 3px solid rgba(236, 227, 35, 0.3);
+.login{
+  background-color: rgba(236,227,35,.5);
+  border: 3px solid rgba(236,227,35,.3);
+}
+.login:hover{
+   background-color: rgb(236,227,35)
 }
 
-.login:hover {
-  background-color: #ece323;
-}
 
-.curriculum {
+.curriculum{
   margin-top: 50px;
 }
 
-.sub-title {
+.sub-title{
   font-size: 36px;
   text-align: center;
 }
-
 .img-box {
   margin-top: 50px;
   display: flex;
   justify-content: center;
 }
 
-.img-box li {
+.img-box li{
   display: flex;
   flex-direction: column;
   text-align: center;
   margin-right: 60px;
 }
-
-.img-box li:last-child {
+.img-box li:last-child{
   margin-right: 0px;
 }
 
-.img-box li img {
+.img-box li img{
   height: 300px;
   width: 300px;
 }
-
-.img-box li span {
+.img-box li span{
   font-size: 24px;
   margin-top: 20px;
 }
+/*コンタクトここから*/
 
-.contact {
+.contact{
   height: 350px;
   margin-top: 50px;
   background-color: #edf4f5;
@@ -154,36 +154,34 @@ header {
   text-align: center;
 }
 
-.contact .form {
+.contact .form{
   margin: 50px 0 40px 0;
   display: flex;
   justify-content: center;
 }
-
-.contact .form .name {
+.form .name{
   margin-bottom: 20px;
-}
 
+}
 .form .name,
-.form .email {
+.form .email{
   height: 50px;
   width: 400px;
   box-sizing: border-box;
   font-size: 16px;
 }
 
-.form-left {
+.form-left{
   margin-right: 50px;
 }
 
-.form .inquiry {
+.form .inquiry{
   height: 120px;
   width: 400px;
   box-sizing: border-box;
   font-size: 16px;
 }
-
-.contact button {
+.contact button{
   background-color: #1dace0;
   color: #fff;
   border-radius: 10px;
@@ -199,6 +197,7 @@ header {
   color: #1dace0;
   transition-duration: 500ms;
 }
+/*コンタクトここまで*/
 
 footer {
   display: flex;
@@ -209,77 +208,99 @@ footer {
   font-size: 18px;
   padding: 5px;
 }
-
-footer .footer-right {
+footer .footer-right{
   margin-right: 80px;
 }
 
-@media only screen and (max-width: 1200px) {
-  img-box {
+
+/*レスポンシブ対応します*/
+/*小型pc想定*/
+@media  screen and (max-width:1200px) {
+  .img-box{
     justify-content: space-around;
   }
-  img-box li {
+  .img-box li{
     margin-right: 30px;
   }
 }
-
-@media only screen and (max-width: 960px) {
-  .img-box {
+  /*タブレット想定*/
+  @media  screen and (max-width:960px) {
+    /*curriculum*/
+  .img-box{
     flex-wrap: wrap;
     align-content: center;
   }
-  .img-box li {
+  .img-box li{
     margin-top: 30px;
     margin-right: 0;
   }
-  .contact {
-    height: 100%;
-    padding: 40px 20px;
-  }
-  .contact .form {
-    flex-flow: column nowrap;
-    margin: 30px 0;
-  }
-  .form-left {
-    margin-right: 0;
-    margin-bottom: 30px;
-  }
-  .form .name, .form .email, .form .inquiry {
-    width: 80%;
-  }
-  .contact button {
-    font-size: 20px;
-    padding: 5px 40px;
-    box-sizing: border-box;
-  }
+
+/*curriculumここまで*/
+
+/*contact*/
+.contact{
+  height: 100%;
+  padding: 40px 20px;
+
+}
+.contact .form{
+  flex-flow: column nowrap;
+  margin: 30px 0;
+}
+.form-left{
+  margin-right: 0;
+  margin-bottom: 30px;
+
+}
+.form .name,
+.form .email{
+  width: 80%;
+}
+.form .inquiry{
+  width: 80%;
 }
 
-@media only screen and (max-width: 480px) {
-  body {
+.contact button{
+  font-size: 20px;
+  padding: 5px 40px;
+  box-sizing: border-box;
+}
+
+}
+/*タブレット対応ここまで*/
+/*スマホ対応ここから*/
+@media screen and (max-width: 480px){
+  body{
     min-width: 375px;
   }
-  .icon {
+
+  /*header対応*/
+  .icon{
     margin-left: 20px;
+
   }
   .icon span,
-  .header-right {
+  .header-right{
     display: none;
+
   }
-  .title {
+  /*header対応ここまで*/
+  /*welcom対応*/
+  .title{
     font-size: 30px;
   }
-  .guideline {
+  .guideline{
     margin-top: 30px;
     font-size: 24px;
     font-weight: normal;
   }
-  .btn-group {
+  .btn-group{
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     margin-top: 40px;
   }
-  .btn {
+  .btn{
     height: 48px;
     width: 140px;
     margin-top: 20px;
@@ -288,42 +309,63 @@ footer .footer-right {
     font-size: 24px;
     border-radius: 10px;
   }
-  .btn first-child {
+  .btn-first-child{
     margin-top: 0;
   }
-  .sub-title {
+  /*welcomここまで*/
+  /*curriculum*/
+  .sub-title{
     font-size: 24px;
   }
-  .img-box {
+  .img-box{
     flex-flow: column nowrap;
   }
-  .img-box li {
+  .img-box li{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-right: 0;
+
   }
-  .img-box li first-child {
+  .img-box li:first-child{
     margin-top: 0;
   }
-  .img-box li span {
+  .img-box li span{
     font-size: 16px;
     margin-top: 20px;
   }
-  .form .name, .form .email {
+
+  /*curriculumここまで*/
+  /*contactここから*/
+  .form .name,
+  .form .email{
     height: 30px;
+
   }
-  .form .inquiry {
+  .form .inquiry{
     height: 50px;
   }
-  footer {
+  /*contactここまで*/
+  /*footer*/
+  footer{
     display: flex;
     justify-content: center;
   }
-  footer .icon {
+  footer .icon{
     display: none;
   }
-  footer .footer-right {
+  footer .footer-right{
     margin-right: 0;
   }
+  /*footerここまで*/ 
 }
+
+
+
+
+
+
+
+
+
+
